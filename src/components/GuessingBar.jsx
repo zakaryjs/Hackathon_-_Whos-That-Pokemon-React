@@ -9,16 +9,16 @@ export default function GuessingBar( {onFormSubmit} ) {
         event.preventDefault()
         onFormSubmit(guess)
         console.log(guess)
+        event.target.reset()
     }
 
     function handleGuessChange(event) {
         setGuess(event.target.value)
     }
 
-
     return (
-        <form onSubmit={formSubmit}>
-            <input onChange={handleGuessChange}></input>
+        <form id='guessingBar' onSubmit={formSubmit}>
+            <input id='guessingBarInput' onChange={handleGuessChange}></input>
         </form>
     )
 
