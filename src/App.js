@@ -1,4 +1,5 @@
 import './App.css';
+import GuessingBar from './components/GuessingBar';
 import Header from './components/Header';
 import Pokemon from './components/Pokemon';
 import PokemonSearch from './components/PokemonSearch';
@@ -9,6 +10,7 @@ function App() {
       {Header}
       <PokemonSearch />
       <Pokemon />
+      <GuessingBar />
     </div>
   );
 }
