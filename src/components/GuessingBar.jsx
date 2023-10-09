@@ -17,9 +17,11 @@ export default function GuessingBar( {onFormSubmit} ) {
     }
 
     return (
+        <div>
         <form id='guessingBar' onSubmit={formSubmit}>
             <input id='guessingBarInput' onChange={handleGuessChange}></input>
         </form>
+        </div>
     )
 
 }

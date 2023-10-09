@@ -17,7 +17,7 @@ export default function PokemonParent() {
     <div>
       {Header}
       <PokemonSearch />
-      <Pokemon />
+      <Pokemon guessToCompare={guessToCompare}/>
       <GuessingBar onFormSubmit={handleGuessSubmit}/>
     </div>
   );
