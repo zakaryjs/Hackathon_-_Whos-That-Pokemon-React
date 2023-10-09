@@ -10,7 +10,7 @@ export default function AnimatedSpriteProvider ({children}) {
         <AnimatedSpriteContext.Provider value={
             {
                 sprite: animatedSpriteUrl,
-                setApi: setAnimatedSpriteUrl
+                setSprite: setAnimatedSpriteUrl
             }
         }>
             {children}
