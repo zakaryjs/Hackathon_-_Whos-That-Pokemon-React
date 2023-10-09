@@ -1,15 +1,15 @@
-import { useContext, useEffect, useState } from "react"
+import { useContext, useEffect } from "react"
 import { ApiContext } from "../contexts/ApiContext";
 import { AnimatedSpriteContext } from "../contexts/AnimatedSpriteContext";
+import { PokemonContext } from "../contexts/PokemonContext";
 
 
 export default function PokemonSearch() {
 
-    const [pokemon, setPokemon] = useState([])
-    const [animatedSprite, setAnimatedSprite] = useState("")
-
     const {api} = useContext(ApiContext);
     const {sprite} = useContext(AnimatedSpriteContext)
+    const {setSprite} = useContext(AnimatedSpriteContext)
+    const {setPokemon} = useContext(PokemonContext)
 
     function getRandomPokemonId(){
         return Math.floor(Math.random() * 800) + 1
@@ -23,7 +23,7 @@ export default function PokemonSearch() {
         console.log(data)
         console.log(pokemonSprite)
         setPokemon(data)
-        setAnimatedSprite(pokemonSprite)
+        setSprite(pokemonSprite)
         return data
     }
 
@@ -34,8 +34,7 @@ export default function PokemonSearch() {
 
     return (
         <div>
-            <h2>{pokemon?.name}</h2>
-            <img src={animatedSprite} alt="pokemon icon" />
+
         </div>
     )
 }
