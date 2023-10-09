@@ -1,16 +1,10 @@
 import './App.css';
-import GuessingBar from './components/GuessingBar';
-import Header from './components/Header';
-import Pokemon from './components/Pokemon';
-import PokemonSearch from './components/PokemonSearch';
+import PokemonParent from './components/PokemonParent';
 
 function App() {
   return (
     <div className="App" id='mainApp'>
-      {Header}
-      <PokemonSearch />
-      <Pokemon />
-      <GuessingBar />
+      <PokemonParent />
     </div>
   );
 }
