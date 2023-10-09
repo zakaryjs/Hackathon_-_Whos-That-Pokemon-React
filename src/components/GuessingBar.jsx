@@ -1,19 +1,35 @@
-import { useState } from 'react'
+import { useContext } from 'react'
 import '../styles/GuessingBar.css'
+import { GuessContext } from '../contexts/GuessContext'
+import { PokemonContext } from '../contexts/PokemonContext'
 
-export default function GuessingBar( {onFormSubmit} ) {
+export default function GuessingBar() {
 
-    const [guess, setGuess] = useState("")
+    const {formGuess} = useContext(GuessContext)
+    const {setFormGuess} = useContext(GuessContext)
+    const {guess} = useContext(GuessContext)
+    const {setGuess} = useContext(GuessContext)
+    const {pokemon} = useContext(PokemonContext)
 
     function formSubmit(event) {
         event.preventDefault()
-        onFormSubmit(guess)
-        console.log(guess)
         event.target.reset()
+        setGuess(formGuess)
+        console.log(formGuess)
+        console.log(guess)
+        checkGuess()
+    }
+
+    function checkGuess() {
+        if (guess === pokemon.name) {
+            console.log('correct')
+        } else {
+            console.log('wrong')
+        }
     }
 
     function handleGuessChange(event) {
-        setGuess(event.target.value)
+        setFormGuess(event.target.value)
     }
 
     return (

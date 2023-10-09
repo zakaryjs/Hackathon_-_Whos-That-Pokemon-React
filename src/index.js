@@ -6,6 +6,7 @@ import reportWebVitals from './reportWebVitals';
 import ApiProvider from './contexts/ApiContext';
 import AnimatedSpriteProvider from './contexts/AnimatedSpriteContext';
 import PokemonProvider from './contexts/PokemonContext';
+import GuessProvider from './contexts/GuessContext';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -14,7 +15,9 @@ root.render(
     <ApiProvider>
         <AnimatedSpriteProvider>
           <PokemonProvider>
-            <App />
+            <GuessProvider>
+              <App />
+            </GuessProvider>
           </PokemonProvider>
         </AnimatedSpriteProvider>
     </ApiProvider>
