@@ -1,23 +1,29 @@
 import { useContext, useEffect, useState } from "react"
 import { ApiContext } from "../contexts/ApiContext";
+import { AnimatedSpriteContext } from "../contexts/AnimatedSpriteContext";
 
 
 export default function PokemonSearch() {
 
     const [pokemon, setPokemon] = useState([])
+    const [animatedSprite, setAnimatedSprite] = useState("")
 
     const {api} = useContext(ApiContext);
+    const {sprite} = useContext(AnimatedSpriteContext)
 
     function getRandomPokemonId(){
-        return Math.floor(Math.random() * 151) + 1
+        return Math.floor(Math.random() * 800) + 1
     }
     
     async function getPokemonData(targetId = getRandomPokemonId()) {
 
         const response = await fetch(`${api}pokemon/${targetId}`)
         const data = await response.json()
+        const pokemonSprite = `${sprite}${data?.name}.gif`
         console.log(data)
+        console.log(pokemonSprite)
         setPokemon(data)
+        setAnimatedSprite(pokemonSprite)
         return data
     }
 
@@ -29,7 +35,7 @@ export default function PokemonSearch() {
     return (
         <div>
             <h2>{pokemon?.name}</h2>
-            <img src={pokemon?.sprites?.other?.home['front_default']} alt="pokemon icon" />
+            <img src={animatedSprite} alt="pokemon icon" />
         </div>
     )
 }
