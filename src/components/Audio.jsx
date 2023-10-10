@@ -39,7 +39,6 @@ const Demo = () => {
   return (
     <div>
       {audio}
-      <pre>{JSON.stringify(state, null, 2)}</pre>
       <form onSubmit={handleSubmit} >
         <select name='selectSong' onChange={handleChange}>
           <option value="Azalea">Azalea Town</option>

@@ -21,7 +21,12 @@ export default function PokemonSearch() {
 
         const response = await fetch(`${api}pokemon/${targetId}`)
         const data = await response.json()
-        setGeneratedSprite(`${sprite}${data?.name}.gif`)
+        let correctlyFormattedPokemonName = data?.name.replace(/-/g, "_")
+        console.log(correctlyFormattedPokemonName)
+        if (correctlyFormattedPokemonName.includes("tapu")) {
+            correctlyFormattedPokemonName = correctlyFormattedPokemonName.replace(/_/g, "")
+        }
+        setGeneratedSprite(`${sprite}${correctlyFormattedPokemonName}.gif`)
         console.log(data)
         setPokemon(data)
     }
