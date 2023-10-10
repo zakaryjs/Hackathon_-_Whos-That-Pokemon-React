@@ -12,20 +12,14 @@ const Demo = () => {
     autoPlay: false,
   });
 
-  function Lacunosa() {
-    setPlaying("/audio/LacunosaTown.mp3")
-  }
-
-  function Azalea() {
-    setPlaying("/audio/AzaleaTown.mp3")
-  }
-
   function handleSubmit(event) {
     event.preventDefault()
     if (value === "Azalea") {
-      Azalea()
+      setPlaying("/audio/AzaleaTown.mp3")
     } else if (value === "Lacunosa") {
-      Lacunosa()
+      setPlaying("/audio/LacunosaTown.mp3")
+      console.log('play set lacunosa')
+      controls.play()
     }
     controls.play()
   }
@@ -39,9 +33,11 @@ const Demo = () => {
     console.log(value)
   }, [value])
 
+
   return (
     <div>
       {audio}
+      <pre>{JSON.stringify(state, null, 2)}</pre>
       <form onSubmit={handleSubmit} >
         <select name='selectSong' onChange={handleChange}>
           <option value="Azalea">Azalea Town</option>
