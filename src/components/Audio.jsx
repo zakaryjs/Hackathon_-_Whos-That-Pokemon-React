@@ -1,15 +1,14 @@
 import {useAudio} from 'react-use';
 
 const Demo = () => {
-  const [audio, state, controls] = useAudio({
-    src: 'https://fi.zophar.net/soundfiles/nintendo-ds-2sf/pokemon-black-white/404%20-%20Kagome%20Town.mp3',
+  const [audio, state, controls, ref] = useAudio({
+    src: '/audio/AzaleaTown.mp3',
     autoPlay: false,
   });
 
   return (
     <div>
       {audio}
-      <pre>{JSON.stringify(state, null, 2)}</pre>
       <button onClick={controls.pause}>Pause</button>
       <button onClick={controls.play}>Play</button>
       <br/>
