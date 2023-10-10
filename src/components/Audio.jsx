@@ -14,13 +14,6 @@ const Demo = () => {
 
   function handleSubmit(event) {
     event.preventDefault()
-    if (value === "Azalea") {
-      setPlaying("/audio/AzaleaTown.mp3")
-    } else if (value === "Lacunosa") {
-      setPlaying("/audio/LacunosaTown.mp3")
-      console.log('play set lacunosa')
-      controls.play()
-    }
     controls.play()
   }
 
@@ -30,7 +23,16 @@ const Demo = () => {
   }
 
   useEffect(() => {
-    console.log(value)
+    console.log(playing)
+  }, [playing])
+
+  useEffect(() => {
+    if (value === "Lacunosa"){
+      setPlaying("/audio/LacunosaTown.mp3")
+    }
+    if (value === "Azalea"){
+      setPlaying("/audio/AzaleaTown.mp3")
+    }
   }, [value])
 
 
