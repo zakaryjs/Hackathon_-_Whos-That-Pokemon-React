@@ -1,9 +1,10 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import {useAudio} from 'react-use';
 
 const Demo = () => {
 
   const [playing, setPlaying] = useState("/audio/AzaleaTown.mp3")
+  const [value, setValue] = useState("")
 
   // eslint-disable-next-line no-unused-vars
   const [audio, state, controls, ref] = useAudio({
@@ -19,21 +20,35 @@ const Demo = () => {
     setPlaying("/audio/AzaleaTown.mp3")
   }
 
+  function handleSubmit(event) {
+    event.preventDefault()
+    if (value === "Azalea") {
+      Azalea()
+    } else if (value === "Lacunosa") {
+      Lacunosa()
+    }
+    controls.play()
+  }
+
+  function handleChange(event) {
+    setValue(event.target.value)
+    console.log(event.target.value)
+  }
+
+  useEffect(() => {
+    console.log(value)
+  }, [value])
+
   return (
     <div>
       {audio}
-      <button onClick={Lacunosa}>Set Song: Lacunosa</button>
-      <button onClick={Azalea}>Set Song: Azalea</button>
-      <br/>
-      <button onClick={controls.play}>Play</button>
-      <button onClick={controls.pause}>Pause</button>
-      <br/>
-      <button onClick={controls.mute}>Mute</button>
-      <button onClick={controls.unmute}>Unmute</button>
-      <br/>
-      <button onClick={() => controls.volume(.1)}>Volume: 10%</button>
-      <button onClick={() => controls.volume(.5)}>Volume: 50%</button>
-      <button onClick={() => controls.volume(1)}>Volume: 100%</button>
+      <form onSubmit={handleSubmit} >
+        <select name='selectSong' onChange={handleChange}>
+          <option value="Azalea">Azalea Town</option>
+          <option value="Lacunosa">Lacunosa Town</option>
+        </select>
+        <button type='submit'>Play</button>
+      </form>
     </div>
   );
 };
