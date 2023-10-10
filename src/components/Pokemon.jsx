@@ -1,6 +1,6 @@
 import { useContext } from "react"
 import { AnimatedSpriteContext } from "../contexts/AnimatedSpriteContext";
-import { PokemonContext } from "../contexts/PokemonContext";
+// import { PokemonContext } from "../contexts/PokemonContext";
 import { ScoreContext } from '../contexts/ScoreContext'
 
 
