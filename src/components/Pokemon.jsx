@@ -7,7 +7,7 @@ import { ScoreContext } from '../contexts/ScoreContext'
 export default function Pokemon() {
 
     const {score} = useContext(ScoreContext)
-    const {pokemon} = useContext(PokemonContext)
+    // const {pokemon} = useContext(PokemonContext)
     const {generatedSprite} = useContext(AnimatedSpriteContext)
 
     return (
