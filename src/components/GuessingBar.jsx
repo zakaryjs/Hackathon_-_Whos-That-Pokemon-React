@@ -1,4 +1,4 @@
-import { useContext } from 'react'
+import { useContext, useEffect } from 'react'
 import '../styles/GuessingBar.css'
 import { GuessContext } from '../contexts/GuessContext'
 import { PokemonContext } from '../contexts/PokemonContext'
@@ -15,16 +15,21 @@ export default function GuessingBar() {
         event.preventDefault()
         event.target.reset()
         setGuess(formGuess)
-        console.log(formGuess)
-        console.log(guess)
-        checkGuess()
     }
+
+    useEffect(() => {
+        if (guess.length > 0) {
+            console.log(guess)
+            checkGuess()
+        }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [guess])
 
     function checkGuess() {
         if (guess === pokemon.name) {
-            console.log('correct')
+            console.log('You have guessed the correct answer!')
         } else {
-            console.log('wrong')
+            console.log('You have guessed the wrong answer!')
         }
     }
 
