@@ -1,7 +1,7 @@
 import {useAudio} from 'react-use';
 
 const Demo = () => {
-  const [audio, state, controls, ref] = useAudio({
+  const [audio, state, controls] = useAudio({
     src: 'https://fi.zophar.net/soundfiles/nintendo-ds-2sf/pokemon-black-white/404%20-%20Kagome%20Town.mp3',
     autoPlay: false,
   });
