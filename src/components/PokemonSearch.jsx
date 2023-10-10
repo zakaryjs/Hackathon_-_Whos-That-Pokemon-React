@@ -9,8 +9,6 @@ export default function PokemonSearch() {
 
     const {api} = useContext(ApiContext);
     const {sprite} = useContext(AnimatedSpriteContext)
-    const {setSprite} = useContext(AnimatedSpriteContext)
-    const {generatedSprite} = useContext(AnimatedSpriteContext)
     const {setGeneratedSprite} = useContext(AnimatedSpriteContext)
     const {setPokemon} = useContext(PokemonContext)
     const {score} = useContext(ScoreContext)
@@ -32,15 +30,6 @@ export default function PokemonSearch() {
         getPokemonData()
     // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [score])
-
-    useEffect(() => {
-        if (generatedSprite != "https://projectpokemon.org/images/normal-sprite/") {
-            // setSprite(generatedSprite)
-            console.log(generatedSprite)
-            console.log(sprite)
-        }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [generatedSprite])
 
     return (
         <div>

@@ -53,5 +53,4 @@ export default function GuessingBar() {
         </form>
         </div>
     )
-
 }
