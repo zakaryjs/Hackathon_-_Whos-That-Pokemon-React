@@ -3,7 +3,6 @@ import { ThemeContext } from "../contexts/ThemeContext";
 
 export default function ThemeSwitcher() {
 
-    const {theme} = useContext(ThemeContext)
     const {setTheme} = useContext(ThemeContext)
 
     function handleChange(event) {
