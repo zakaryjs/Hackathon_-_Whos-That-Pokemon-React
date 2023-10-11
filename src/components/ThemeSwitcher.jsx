@@ -12,10 +12,11 @@ export default function ThemeSwitcher() {
 
     return (
         <div>
-            <select name="themeSwitcherSelect" onChange={handleChange}>
-                <option value="defaultClass">Default Theme</option>
-                <option value="goldSilverClass">Gold and Silver Theme</option>
-                <option value="blackWhiteClass">Black and White Theme</option>
+            <select name="themeSwitcherSelect" onChange={handleChange} defaultValue="rubySapphireClass">
+                <option value="redBlueClass">Kanto Theme</option>
+                <option value="goldSilverClass">Johto Theme</option>
+                <option value="rubySapphireClass">Hoenn Theme</option>
+                <option value="blackWhiteClass">Unova Theme</option>
             </select>
         </div>
     )

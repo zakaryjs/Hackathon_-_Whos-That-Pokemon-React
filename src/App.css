@@ -1,4 +1,4 @@
-.defaultClass {
+.rubySapphireClass {
   text-align: center;
   background-image: url(./images/pokemonemeraldintro.png);
 }
@@ -11,6 +11,11 @@
 .goldSilverClass {
   text-align: center;
   background-image: url(https://images6.alphacoders.com/893/thumb-1920-893634.png);
+}
+
+.redBlueClass {
+  text-align: center;
+  background-image: url(https://media-s3-us-east-1.ceros.com/hype-beast/images/2018/07/17/8328aabd61c683129c4e685022e4e9f8/background-02-fade.jpg?imageOpt=1&fit=bounds&width=2163);
 }
 
 #mainApp {

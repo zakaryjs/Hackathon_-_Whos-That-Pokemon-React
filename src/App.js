@@ -2,7 +2,6 @@ import { useContext } from 'react';
 import './App.css';
 import PokemonParent from './components/PokemonParent';
 import { ThemeContext } from './contexts/ThemeContext';
-import ThemeSwitcher from './components/ThemeSwitcher';
 
 function App() {
 
@@ -11,7 +10,6 @@ function App() {
   return (
     <div className={theme} id='mainApp'>
       <PokemonParent />
-      <ThemeSwitcher />
     </div>
   );
 }

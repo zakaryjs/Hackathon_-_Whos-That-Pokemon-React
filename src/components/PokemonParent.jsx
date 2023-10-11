@@ -3,6 +3,7 @@ import Header from './Header';
 import Pokemon from './Pokemon';
 import PokemonSearch from './PokemonSearch';
 import AudioPlayer from './Audio';
+import ThemeSwitcher from './ThemeSwitcher';
 import { useState } from 'react';
 
 export default function PokemonParent() {
@@ -13,6 +14,7 @@ export default function PokemonParent() {
     <div>
       {Header}
       <AudioPlayer />
+      <ThemeSwitcher />
       <PokemonSearch setLoading={setLoading}/>
       <Pokemon loading={loading}/>
       <GuessingBar />

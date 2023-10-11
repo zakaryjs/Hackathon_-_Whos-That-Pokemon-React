@@ -4,7 +4,7 @@ export const ThemeContext = createContext(null);
 
 export default function ThemeProvider ({children}) {
 
-    const [theme, setTheme] = useState("defaultClass")
+    const [theme, setTheme] = useState("rubySapphireClass")
 
     return (
         <ThemeContext.Provider value={
