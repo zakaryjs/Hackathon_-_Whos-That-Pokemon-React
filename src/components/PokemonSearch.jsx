@@ -26,6 +26,9 @@ export default function PokemonSearch() {
         if (correctlyFormattedPokemonName.includes("tapu")) {
             correctlyFormattedPokemonName = correctlyFormattedPokemonName.replace(/_/g, "")
         }
+        if (correctlyFormattedPokemonName.includes("mr_mime")) {
+            correctlyFormattedPokemonName = "mr.mime"
+        }
         setGeneratedSprite(`${sprite}${correctlyFormattedPokemonName}.gif`)
         console.log(data)
         setPokemon(data)

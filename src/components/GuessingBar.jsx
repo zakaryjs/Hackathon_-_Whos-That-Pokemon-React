@@ -33,9 +33,16 @@ export default function GuessingBar() {
     }, [score])
 
     function checkGuess() {
+        console.log(guess)
         if (guess.toLowerCase()  === pokemon.name) {
             console.log('You have guessed the correct answer!')
             setScore(score + 1)
+        } else if ((guess === "mime jr" && pokemon.name === "mime-jr") || (guess === "mr mime" && pokemon.name === "mr-mime") ) {
+            console.log('You have guessed the correct answer!')
+            setScore(score + 1)
+        } else if ((guess === "tapu fini" && pokemon.name === "tapu-fini") || (guess === "tapu koko" && pokemon.name === "tapu-koko") || (guess === "tapu bulu" && pokemon.name === "tapu-bulu") || (guess === "tapu lele" && pokemon.name === "tapu-lele")) {
+            console.log('You have guessed the correct answer!')
+            setScore(score + 1) 
         } else {
             console.log('You have guessed the wrong answer!')
             setScore(score - 0.5)
@@ -48,7 +55,7 @@ export default function GuessingBar() {
 
     return (
         <div>
-        <form id='guessingBar' onSubmit={formSubmit}>
+        <form id='guessingBar' onSubmit={formSubmit} autoComplete='off'>
             <input id='guessingBarInput' onChange={handleGuessChange}></input>
         </form>
         </div>

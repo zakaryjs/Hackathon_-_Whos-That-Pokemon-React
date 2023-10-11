@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import {useAudio} from 'react-use';
 
-const Demo = () => {
+const AudioPlayer = () => {
 
   const [playing, setPlaying] = useState("/audio/AzaleaTown.mp3")
   const [value, setValue] = useState("")
@@ -44,10 +44,12 @@ const Demo = () => {
           <option value="Azalea">Azalea Town</option>
           <option value="Lacunosa">Lacunosa Town</option>
         </select>
+        <br/>
         <button type='submit'>Play</button>
       </form>
+      <button onClick={controls.pause}>Pause</button>
     </div>
   );
 };
 
-export default Demo
+export default AudioPlayer
