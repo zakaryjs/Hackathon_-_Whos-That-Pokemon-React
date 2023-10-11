@@ -22,8 +22,7 @@ export default function PokemonSearch({setLoading}) {
         setLoading(true)
         const response = await fetch(`${api}pokemon/${targetId}`)
         const data = await response.json()
-        let correctlyFormattedPokemonName = data?.name.replace(/-/g, "_")
-        console.log(correctlyFormattedPokemonName)
+        let correctlyFormattedPokemonName = data?.species.name.replace(/-/g, "_")
         if (correctlyFormattedPokemonName.includes("tapu")) {
             correctlyFormattedPokemonName = correctlyFormattedPokemonName.replace(/_/g, "")
         }
@@ -31,7 +30,6 @@ export default function PokemonSearch({setLoading}) {
             correctlyFormattedPokemonName = "mr.mime"
         }
         setGeneratedSprite(`${sprite}${correctlyFormattedPokemonName}.gif`)
-        console.log(data)
         setPokemon(data)
         setLoading(false)
     }
