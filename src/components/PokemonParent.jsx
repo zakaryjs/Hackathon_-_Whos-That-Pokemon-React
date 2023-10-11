@@ -15,7 +15,7 @@ export default function PokemonParent() {
       <AudioPlayer />
       <PokemonSearch setLoading={setLoading}/>
       <Pokemon loading={loading}/>
-      <GuessingBar loading={loading}/>
+      <GuessingBar />
     </div>
   );
 }
