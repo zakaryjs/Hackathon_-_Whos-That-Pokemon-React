@@ -1,0 +1,28 @@
+#pokemonImage {
+    transform: scale(1.75);
+    margin: 20px;
+}
+
+h1 {
+    margin-bottom: 20px;
+}
+
+#pokeballImage {
+    height: auto;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    #pokeballImage {
+      animation: pokeballImageSpin infinite 0.5s linear;
+    }
+  }
+  
+
+@keyframes pokeballImageSpin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }

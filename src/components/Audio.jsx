@@ -33,6 +33,9 @@ const AudioPlayer = () => {
     if (value === "Azalea"){
       setPlaying("/audio/AzaleaTown.mp3")
     }
+    if (value === "Boutique"){
+      setPlaying("/audio/Boutique.mp3")
+    }
   }, [value])
 
 
@@ -41,8 +44,9 @@ const AudioPlayer = () => {
       {audio}
       <form onSubmit={handleSubmit} >
         <select name='selectSong' onChange={handleChange}>
-          <option value="Azalea">Azalea Town</option>
-          <option value="Lacunosa">Lacunosa Town</option>
+          <option value="Azalea">Azalea Town - HGSS</option>
+          <option value="Lacunosa">Lacunosa Town - BW</option>
+          <option value="Boutique">Boutique - XY</option>
         </select>
         <br/>
         <button type='submit'>Play</button>

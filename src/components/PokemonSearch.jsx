@@ -5,7 +5,7 @@ import { PokemonContext } from "../contexts/PokemonContext";
 import { ScoreContext } from '../contexts/ScoreContext'
 
 
-export default function PokemonSearch() {
+export default function PokemonSearch({setLoading}) {
 
     const {api} = useContext(ApiContext);
     const {sprite} = useContext(AnimatedSpriteContext)
@@ -19,6 +19,7 @@ export default function PokemonSearch() {
     
     async function getPokemonData(targetId = getRandomPokemonId()) {
 
+        setLoading(true)
         const response = await fetch(`${api}pokemon/${targetId}`)
         const data = await response.json()
         let correctlyFormattedPokemonName = data?.name.replace(/-/g, "_")
@@ -32,6 +33,7 @@ export default function PokemonSearch() {
         setGeneratedSprite(`${sprite}${correctlyFormattedPokemonName}.gif`)
         console.log(data)
         setPokemon(data)
+        setLoading(false)
     }
 
     useEffect(() => {
