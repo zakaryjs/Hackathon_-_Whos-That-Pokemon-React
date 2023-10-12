@@ -11,10 +11,12 @@ export default function PokemonSearch({setLoading}) {
     const {sprite} = useContext(AnimatedSpriteContext)
     const {setGeneratedSprite} = useContext(AnimatedSpriteContext)
     const {setPokemon} = useContext(PokemonContext)
+    const {previousPokemon} = useContext(PokemonContext)
+    const {setPreviousPokemon} = useContext(PokemonContext)
     const {score} = useContext(ScoreContext)
 
     function getRandomPokemonId(){
-        return Math.floor(Math.random() * 800) + 1
+        return Math.floor(Math.random() * 2) + 1
     }
     
     async function getPokemonData(targetId = getRandomPokemonId()) {
@@ -22,6 +24,10 @@ export default function PokemonSearch({setLoading}) {
         setLoading(true)
         const response = await fetch(`${api}pokemon/${targetId}`)
         const data = await response.json()
+        setPreviousPokemon(data)
+        if (data?.species.name === previousPokemon.species.name) {
+            getPokemonData()
+        }
         let correctlyFormattedPokemonName = data?.species.name.replace(/-/g, "_")
         if (correctlyFormattedPokemonName.includes("tapu")) {
             correctlyFormattedPokemonName = correctlyFormattedPokemonName.replace(/_/g, "")
