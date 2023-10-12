@@ -26,6 +26,12 @@ export default function PokemonSearch({setLoading}) {
         if (correctlyFormattedPokemonName.includes("tapu")) {
             correctlyFormattedPokemonName = correctlyFormattedPokemonName.replace(/_/g, "")
         }
+        if (correctlyFormattedPokemonName.includes("porygon_z")) {
+            correctlyFormattedPokemonName = "porygon-z"
+        }
+        if (correctlyFormattedPokemonName.includes("_o")) {
+            correctlyFormattedPokemonName = correctlyFormattedPokemonName.replace(/_/g, "-")
+        }
         if (correctlyFormattedPokemonName.includes("mr_mime")) {
             correctlyFormattedPokemonName = "mr.mime"
         }

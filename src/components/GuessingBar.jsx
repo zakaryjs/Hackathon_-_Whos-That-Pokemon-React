@@ -43,6 +43,12 @@ export default function GuessingBar() {
         } else if ((guess === "tapu fini" && pokemon.name === "tapu-fini") || (guess === "tapu koko" && pokemon.name === "tapu-koko") || (guess === "tapu bulu" && pokemon.name === "tapu-bulu") || (guess === "tapu lele" && pokemon.name === "tapu-lele")) {
             console.log('You have guessed the correct answer!')
             setScore(score + 1) 
+        } else if (guess === "porygon 2" && pokemon.species.name === "porygon2") {
+            console.log('You have guessed the correct answer!')
+            setScore(score + 1)
+        } else if (guess === "porygon z" && pokemon.species.name === "porygon-z") {
+            console.log('You have guessed the correct answer!')
+            setScore(score + 1)
         } else {
             console.log('You have guessed the wrong answer!')
             setScore(score - 0.5)
