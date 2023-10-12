@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import {useAudio} from 'react-use';
+import '../styles/Audio.css'
 
 const AudioPlayer = () => {
 
