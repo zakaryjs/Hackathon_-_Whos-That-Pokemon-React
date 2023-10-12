@@ -34,7 +34,7 @@ export default function GuessingBar() {
 
     function checkGuess() {
         console.log(guess)
-        if (guess.toLowerCase()  === pokemon.name) {
+        if (guess.toLowerCase()  === pokemon.species.name) {
             console.log('You have guessed the correct answer!')
             setScore(score + 1)
         } else if ((guess === "mime jr" && pokemon.name === "mime-jr") || (guess === "mr mime" && pokemon.name === "mr-mime") ) {
