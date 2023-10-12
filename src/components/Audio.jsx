@@ -52,6 +52,10 @@ const AudioPlayer = () => {
         <button type='submit'>Play</button>
       </form>
       <button onClick={controls.pause}>Pause</button>
+      <br/>
+      <button onClick={() => controls.volume(.2)}>Set volume to 20%</button>
+      <button onClick={() => controls.volume(.5)}>Set volume to 50%</button>
+      <button onClick={() => controls.volume(1)}>Set volume to 100%</button>
     </div>
   );
 };

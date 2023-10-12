@@ -56,7 +56,7 @@ export default function GuessingBar() {
     return (
         <div>
         <form id='guessingBar' onSubmit={formSubmit} autoComplete='off'>
-            <input id='guessingBarInput' onChange={handleGuessChange}></input>
+            <input id='guessingBarInput' onChange={handleGuessChange} placeholder='Enter your guess here...'></input>
         </form>
         </div>
     )
