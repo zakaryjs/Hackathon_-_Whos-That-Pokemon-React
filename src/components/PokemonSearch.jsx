@@ -10,13 +10,14 @@ export default function PokemonSearch({setLoading}) {
     const {api} = useContext(ApiContext);
     const {sprite} = useContext(AnimatedSpriteContext)
     const {setGeneratedSprite} = useContext(AnimatedSpriteContext)
+
     const {setPokemon} = useContext(PokemonContext)
     const {previousPokemon} = useContext(PokemonContext)
     const {setPreviousPokemon} = useContext(PokemonContext)
     const {score} = useContext(ScoreContext)
 
     function getRandomPokemonId(){
-        return Math.floor(Math.random() * 2) + 1
+        return Math.floor(Math.random() * 800) + 1
     }
     
     async function getPokemonData(targetId = getRandomPokemonId()) {
