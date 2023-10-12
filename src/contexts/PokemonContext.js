@@ -4,8 +4,13 @@ export const PokemonContext = createContext(null);
 
 export default function PokemonProvider ({children}) {
 
+    const firstLoadData = 
+    {species: {
+        name: ""
+    }}
+
     const [pokemon, setPokemon] = useState([])
-    const [previousPokemon, setPreviousPokemon] = useState([])
+    const [previousPokemon, setPreviousPokemon] = useState(firstLoadData)
 
     return (
         <PokemonContext.Provider value={

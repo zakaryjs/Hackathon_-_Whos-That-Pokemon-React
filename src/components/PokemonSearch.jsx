@@ -25,10 +25,10 @@ export default function PokemonSearch({setLoading}) {
         setLoading(true)
         const response = await fetch(`${api}pokemon/${targetId}`)
         const data = await response.json()
-        setPreviousPokemon(data)
-        if (data?.species.name === previousPokemon.species.name) {
+        if (data?.species.name === previousPokemon?.species.name) {
             getPokemonData()
         }
+        setPreviousPokemon(data)
         let correctlyFormattedPokemonName = data?.species.name.replace(/-/g, "_")
         if (correctlyFormattedPokemonName.includes("tapu")) {
             correctlyFormattedPokemonName = correctlyFormattedPokemonName.replace(/_/g, "")
