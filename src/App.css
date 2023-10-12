@@ -1,28 +1,48 @@
 .rubySapphireClass {
   text-align: center;
   background-image: url(./images/pokemonemeraldintro.png);
+  border: 4px solid white;
 }
 
 .blackWhiteClass {
   text-align: center;
-  background-image: url(https://i.pinimg.com/originals/32/ee/43/32ee43bfd054776d470cee1a8fdd8381.png);
+  background-image: url(./images/pokemonkyurem.png);
+  border: 4px solid black;
 }
 
 .goldSilverClass {
   text-align: center;
-  background-image: url(https://images6.alphacoders.com/893/thumb-1920-893634.png);
+  background-image: url(./images/pokemongoldsilver.png);
+  border: 4px solid blue;
 }
 
 .redBlueClass {
   text-align: center;
   background-image: url(https://media-s3-us-east-1.ceros.com/hype-beast/images/2018/07/17/8328aabd61c683129c4e685022e4e9f8/background-02-fade.jpg?imageOpt=1&fit=bounds&width=2163);
+  border: 4px solid yellow;
 }
 
 #mainApp {
   text-align: center;
-  border: 4px solid white;
   min-height: 100vh;
   background-repeat: no-repeat;
   background-size: cover;
   font-family: 'Tilt Neon'
+}
+
+h3 {
+  margin: 15px;
+  font-size: 21px;
+}
+
+button {
+  font-family: 'Tilt Neon';
+}
+
+option {
+  font-family: 'Tilt Neon';
+}
+
+select {
+  font-family: 'Tilt Neon';
 }

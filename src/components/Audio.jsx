@@ -14,7 +14,11 @@ const AudioPlayer = () => {
 
   function handleSubmit(event) {
     event.preventDefault()
-    controls.play()
+    if (state.paused) {
+      controls.play()
+    } else {
+      controls.pause()
+    }
   }
 
   function handleChange(event) {
@@ -43,19 +47,23 @@ const AudioPlayer = () => {
     <div>
       {audio}
       <form onSubmit={handleSubmit} >
+        <h3>Music Selector:</h3>
         <select name='selectSong' onChange={handleChange}>
           <option value="Azalea">Azalea Town - HGSS</option>
           <option value="Lacunosa">Lacunosa Town - BW</option>
           <option value="Boutique">Boutique - XY</option>
         </select>
         <br/>
-        <button type='submit'>Play</button>
+        <button type='submit'>{state.paused ? "Play" : "Pause"}</button>
       </form>
-      <button onClick={controls.pause}>Pause</button>
+      
       <br/>
       <button onClick={() => controls.volume(.2)}>Set volume to 20%</button>
+      <br/>
       <button onClick={() => controls.volume(.5)}>Set volume to 50%</button>
+      <br/>
       <button onClick={() => controls.volume(1)}>Set volume to 100%</button>
+      <br/>
     </div>
   );
 };
