@@ -27,6 +27,17 @@ const AudioPlayer = () => {
     console.log(event.target.value)
   }
 
+  function handleClick(event) {
+    event.preventDefault()
+    if (state.volume === 1) {
+      controls.volume(0.2)
+    } else if (state.volume === 0.2) {
+      controls.volume(0.5)
+    } else if (state.volume === 0.5) {
+      controls.volume(1)
+    }
+  }
+
   useEffect(() => {
     console.log(playing)
   }, [playing])
@@ -55,16 +66,12 @@ const AudioPlayer = () => {
           <option value="Boutique">Boutique - XY</option>
         </select>
         <br/>
+        <br/>
         <button type='submit'>{state.paused ? "Play" : "Pause"}</button>
+        <br/>
+        <h3>Current volume: {state.volume === 0.2 ? <u>20%</u> : state.volume === 0.5 ? <u>50%</u> : state.volume === 1 ? <u>100%</u> : "error"}</h3>
+        <button onClick={handleClick}>{state.volume === 1 ? "Set volume to 20%" : state.volume === 0.2 ? "Set volume to 50%" : state.volume === 0.5 ? "Set volume to 100%" : "error"}</button>
       </form>
-      
-      <br/>
-      <button onClick={() => controls.volume(.2)}>Set volume to 20%</button>
-      <br/>
-      <button onClick={() => controls.volume(.5)}>Set volume to 50%</button>
-      <br/>
-      <button onClick={() => controls.volume(1)}>Set volume to 100%</button>
-      <br/>
     </div>
   );
 };
