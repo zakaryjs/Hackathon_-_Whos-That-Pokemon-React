@@ -69,7 +69,8 @@ const AudioPlayer = () => {
         <br/>
         <button type='submit'>{state.paused ? "Play" : "Pause"}</button>
         <br/>
-        <h3>Current volume: {state.volume === 0.2 ? <u>20%</u> : state.volume === 0.5 ? <u>50%</u> : state.volume === 1 ? <u>100%</u> : "error"}</h3>
+        <h3>Current volume:</h3>
+        <h3>{state.volume === 0.2 ? <u>20%</u> : state.volume === 0.5 ? <u>50%</u> : state.volume === 1 ? <u>100%</u> : "error"}</h3>
         <button onClick={handleClick}>{state.volume === 1 ? "Set volume to 20%" : state.volume === 0.2 ? "Set volume to 50%" : state.volume === 0.5 ? "Set volume to 100%" : "error"}</button>
       </form>
     </div>

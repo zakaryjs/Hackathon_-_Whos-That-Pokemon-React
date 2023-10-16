@@ -19,7 +19,7 @@
 .redBlueClass {
   text-align: center;
   background-image: url(https://media-s3-us-east-1.ceros.com/hype-beast/images/2018/07/17/8328aabd61c683129c4e685022e4e9f8/background-02-fade.jpg?imageOpt=1&fit=bounds&width=2163);
-  border: 4px solid yellow;
+  border: 4px solid green;
 }
 
 #mainApp {
@@ -35,14 +35,7 @@ h3 {
   font-size: 21px;
 }
 
-button {
+button, option, select, option, input {
   font-family: 'Tilt Neon';
-}
-
-option {
-  font-family: 'Tilt Neon';
-}
-
-select {
-  font-family: 'Tilt Neon';
+  transform: scale(1.4);
 }
