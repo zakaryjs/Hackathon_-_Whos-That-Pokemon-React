@@ -24,6 +24,7 @@ export default function GuessingBar() {
         if (guess.length > 0) {
             console.log(guess)
             checkGuess()
+            setGuess("")
         }
     // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [guess])
